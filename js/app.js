@@ -51,7 +51,6 @@ const switchTab = id => {
 }
 
 const createPost = post => {
-    console.log(post)
     const { image, userImage } = post
     const div = document.createElement('article')
     div.classList.add('post')
@@ -121,7 +120,7 @@ const createPost = post => {
                       <a class="post__name--underline" href="#">
                           ${post?.comments[0]?.user}
                       </a>
-                      ${post?.comments[0]?.text}
+                      ${post.comments[0]?.text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -151,7 +150,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts()
-    posts.forEach(post => {
+    reportedPosts.forEach(post => {
         const div = createPost(post)
         document.getElementById('reported').appendChild(div)
     })
